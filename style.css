@@ -68,14 +68,15 @@ h2 {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 button {
-    padding: 15px 30px;
+    padding: 12px 24px;
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     transition: 0.2s;
 }
@@ -91,6 +92,16 @@ button {
 
 button:hover {
     transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .buttons {
+        gap: 15px;
+    }
 }
 
 .memories {
@@ -214,9 +225,9 @@ button:hover {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    max-width: 800px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -232,4 +243,19 @@ button:hover {
 .photo:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(255, 77, 109, 0.2);
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        max-width: 400px;
+    }
+    .gallery-section {
+        padding: 60px 15px;
+    }
+    .gallery-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
 }
