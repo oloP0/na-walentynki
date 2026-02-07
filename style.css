@@ -212,32 +212,39 @@ button:hover {
 }
 
 .gallery-section {
-    padding: 80px 20px;
+    padding: 50px 15px;
     text-align: center;
     background: rgba(255, 255, 255, 0.5);
 }
 
 .gallery-section h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--rose);
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 15px;
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
 .photo {
-    aspect-ratio: 1;
     background: linear-gradient(135deg, #fff, #ffe6ee);
-    border: 3px dashed var(--pink);
-    border-radius: 15px;
+    border: 2px dashed var(--pink);
+    border-radius: 10px;
     cursor: pointer;
     transition: 0.3s;
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
 
 .photo:hover {
@@ -247,15 +254,20 @@ button:hover {
 
 @media (max-width: 768px) {
     .gallery {
-        grid-template-columns: repeat(2, 1fr);
+        max-width: 90%;
         gap: 12px;
-        max-width: 400px;
     }
     .gallery-section {
-        padding: 60px 15px;
+        padding: 40px 10px;
     }
     .gallery-section h3 {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery {
+        max-width: 500px;
     }
 }
